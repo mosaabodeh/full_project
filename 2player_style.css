@@ -1,0 +1,125 @@
+body{
+   background-color:  hsl(237,49%,15%);; 
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    margin-top: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 3px solid dimgrey;
+}
+#btn-group1 {
+    display: none;
+    float: right;
+}
+#res{
+    justify-content: center;
+   margin-top: 15%;
+   margin-left: 25%;
+   margin-right: 27%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 3px solid dimgrey;
+   width: 50%;
+}
+#p1Score{
+    padding-left:2% ;
+}
+h1 , h2 , h3 {
+    color: white;
+}
+.btn btn-default{
+    display: flex;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   border-radius: 50%;
+}
+#rock{
+    border-radius: 50%;
+    border :4px solid rgb(250, 39, 39);
+
+}
+#paper{
+    border-radius: 50%;
+    border :4px solid rgb(4, 252, 4);
+    
+}#scissors{
+    border-radius: 50%;
+    border :4px solid rgb(252, 252, 36);
+    
+}
+
+#rock2{
+    border-radius: 50%;
+    border :4px solid rgb(250, 39, 39);
+
+}
+#paper2{
+    border-radius: 50%;
+    border :4px solid rgb(4, 252, 4);
+    
+}#scissors2{
+    border-radius: 50%;
+    border :4px solid rgb(252, 252, 36);
+}
+#p2{
+margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#button2{
+    
+    border: 1px solid hsl(217, 16%, 45%);
+    padding: 5px 25px;
+    border-radius: 5px;
+    position: absolute;
+    left: 50px;
+    bottom: 250px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(to left, transparent 50%, #fff 50%);
+    background-size: 250% 100%;
+    background-position: right bottom;
+    transition: background-position .3s ease-out, color .3s ease-out;
+    text-transform: uppercase;
+
+ }
+
+#button2:hover {
+    background-position: left bottom;
+    color: hsl(214, 47%, 23%);
+}
+
+
+#button21{
+    
+    border: 1px solid hsl(217, 16%, 45%);
+    padding: 5px 25px;
+    border-radius: 5px;
+    position: absolute;
+    right: 50px;
+    bottom: 250px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(to left, transparent 50%, #fff 50%);
+    background-size: 250% 100%;
+    background-position: right bottom;
+    transition: background-position .3s ease-out, color .3s ease-out;
+    text-transform: uppercase;
+
+ }
+
+#button21:hover {
+    background-position: left bottom;
+    color: hsl(214, 47%, 23%);
+}

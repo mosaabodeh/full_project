@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="2player_style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <h1>Rock<br> <br>Paper <br><br>Scissors</h1>
+        </div>
+       
+        <div class="col-sm-4">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div id="btn-group1" >
+            <button type="button" class="btn btn-default" id="rock">
+                <img src="icon-rock.svg" alt="rock">
+            </button>
+            <button type="button" class="btn btn-default" id="paper">
+                <img src="icon-paper.svg" alt="paper">
+            </button>
+            <button type="button" class="btn btn-default" id="scissors">
+                <img src="icon-scissors.svg" alt="scissors">
+            </button>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div id="btn-group2" role="group" aria-label="...">
+           
+
+            <button type="button" class="btn btn-default" id="rock2">
+                <img src="icon-rock.svg" alt="rock">
+
+            </button>
+            <button type="button" class="btn btn-default" id="paper2">
+                <img src="icon-paper.svg" alt="paper">
+            </button>
+            <button type="button" class="btn btn-default" id="scissors2">
+                <img src="icon-scissors.svg" alt="scissors">
+
+            </button>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="btn-group btn-group-lg" role="group" aria-label="...">
+          </div>
+        </div>
+      </div>
+    </div>
+   <div id="p2" > <button onclick="myFunction()" id="button2">second player</button> 
+    <button  onClick="refreshPage()"  id="button21">play again !</button></div> 
+    <div id="res">
+        <h2>The result </h2>
+        <h3 id="p1Score"></h3>
+      </div>
+  </body>
+
+  <script>
+    // variables
+ 
+    var p2Score = 0;
+    var p1Choice = "";
+    var p2Choice = "";
+    // functions
+  
+    function myFunction() {
+        document.getElementById('button2').style.visibility='hidden';
+        var x = document.getElementById("btn-group1");
+  var y = document.getElementById("btn-group2");
+    x.style.display = "inline";
+    y.style.display = "none";
+}
+
+    function p1Win() {
+      $("#p1Score").text("player 2 wins");
+    }
+
+    function p2Win() {
+        $("#p1Score").text(" ");
+        p2Score++;
+        if(p2Score>=2)
+        $("#p1Score").text("player 1 wins");
+    }
+   
+    function tie() {
+      $("#p1Score").text("\tDrow");
+    }
+    function refreshPage(){
+    window.location.reload();
+} 
+    // event listeners
+    $("#rock").on("click", function () {
+      p1Choice = "rock";
+      $("#rock").addClass("btn-primary");
+      $("#paper").removeClass("btn-primary");
+      $("#scissors").removeClass("btn-primary");
+    });
+
+    $("#paper").on("click", function () {
+      p1Choice = "paper";
+      $("#paper").addClass("btn-primary");
+      $("#rock").removeClass("btn-primary");
+      $("#scissors").removeClass("btn-primary");
+    });
+
+    $("#scissors").on("click", function () {
+      p1Choice = "scissors";
+      $("#scissors").addClass("btn-primary");
+      $("#rock").removeClass("btn-primary");
+      $("#paper").removeClass("btn-primary");
+    });
+
+    $("#rock2").on("click", function () {
+      p2Choice = "rock";
+      $("#rock2").addClass("btn-primary");
+      $("#paper2").removeClass("btn-primary");
+      $("#scissors2").removeClass("btn-primary");
+    });
+
+    $("#paper2").on("click", function () {
+      p2Choice = "paper";
+      $("#paper2").addClass("btn-primary");
+      $("#rock2").removeClass("btn-primary");
+      $("#scissors2").removeClass("btn-primary");
+    });
+
+    $("#scissors2").on("click", function () {
+      p2Choice = "scissors";
+      $("#scissors2").addClass("btn-primary");
+      $("#rock2").removeClass("btn-primary");
+      $("#paper2").removeClass("btn-primary");
+    });
+
+    $("#reset").on("click", function () {
+      reset();
+    });
+
+    // game logic
+    $("#rock").on("click", function () {
+      if (p2Choice === "rock") {
+        tie();
+      } else if (p2Choice === "paper") {
+        p2Win();
+      } else {
+        p1Win();
+      }
+    });
+
+    $("#paper").on("click", function () {
+      if (p2Choice === "paper") {
+        tie();
+      } else if (p2Choice === "scissors") {
+        p2Win();
+      } else {
+        p1Win();
+      }
+    });
+
+    $("#scissors").on("click", function () {
+      if (p2Choice === "scissors") {
+        tie();
+      } else if (p2Choice === "rock") {
+        p2Win();
+      } else {
+        p1Win();
+      }
+    });
+
+    $("#rock2").on("click", function () {
+      if (p1Choice === "rock") {
+        tie();
+      } else if (p1Choice === "paper") {
+        p1Win();
+      } else {
+        p2Win();
+      }
+    });
+
+    $("#paper2").on("click", function () {
+      if (p1Choice === "paper") {
+        tie();
+      } else if (p1Choice === "scissors") {
+        p1Win();
+      } else {
+        p2Win();
+      }
+    });
+
+    $("#scissors2").on("click", function () {
+      if (p1Choice === "scissors") {
+        tie();
+      } else if (p1Choice === "rock") {
+        p1Win();
+      } else {
+        p2Win();
+      }
+    });
+  </script>
+</html>
